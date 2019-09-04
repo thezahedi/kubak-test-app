@@ -30,12 +30,11 @@ class LocationController extends Controller
     public function search(Request $request)
     {
         $this->validate($request, [
-            'lat' => 'required',
-            'lng' => 'required',
+            'lat'   => 'required',
+            'lng'   => 'required',
             'count' => 'required',
         ]);
 
         return Location::getLocations($request->lat, $request->lng, $request->count);
     }
-
 }
